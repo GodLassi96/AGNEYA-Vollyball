@@ -1,0 +1,102 @@
+/* Haikyu!! Karasuno Theme */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;700&display=swap');
+
+body { 
+    font-family: 'Roboto', sans-serif; 
+    background-color: #0b0b0b; /* Pitch Black */
+    color: #ffffff; 
+    margin: 0; 
+    padding-top: 80px; 
+}
+
+/* Navigation Bar - Karasuno Uniform Style */
+.navbar { 
+    background-color: #1a1a1a; 
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    padding: 10px 0; 
+    z-index: 1000; 
+    border-bottom: 4px solid #ff6600; /* Signature Orange */
+}
+
+.navbar a { 
+    font-family: 'Oswald', sans-serif; /* Sporty, tall font */
+    color: #ffffff; 
+    text-decoration: none; 
+    margin: 0 15px; 
+    font-weight: 700; 
+    font-size: 16px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+/* Hover and Active states - Orange highlight */
+.navbar a:hover, .navbar a.active { 
+    color: #ff6600; 
+    border-bottom: 2px solid #ff6600;
+}
+
+/* Layout Containers */
+.container { 
+    max-width: 900px; 
+    margin: auto; 
+    padding: 20px; 
+    text-align: center; 
+}
+
+h1 { 
+    font-family: 'Oswald', sans-serif; 
+    color: #ff6600; 
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px #000;
+}
+
+/* Cards - Styled like a team jersey/court */
+.card { 
+    background-color: #1e1e1e; 
+    padding: 25px; 
+    border-radius: 4px; /* Sharp edges for a more aggressive look */
+    text-align: left; 
+    margin-bottom: 25px; 
+    border-left: 8px solid #ff6600; /* Side stripe like the uniform */
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+}
+
+h3 { 
+    font-family: 'Oswald', sans-serif;
+    color: #ff6600; 
+    margin-top: 0; 
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+/* Buttons for Admin/Links */
+.btn-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    border-radius: 0;
+    transition: background 0.3s;
+}
+
+.btn-link:hover {
+    background-color: #cc5200;
+}
+
+/* Iframes */
+iframe {
+    width: 100%;
+    border: 2px solid #333;
+    border-radius: 4px;
+    background: #000;
+}
