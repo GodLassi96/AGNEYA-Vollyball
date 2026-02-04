@@ -3,10 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin | AGNEYA 2026</title>
+    <title>Admin Dashboard | AGNEYA</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .admin-box { margin-top: 20px; }
+        .tab-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+        .tab-btn { 
+            padding: 10px 20px; 
+            background: #1e1e1e; 
+            color: #ff6600; 
+            border: 2px solid #ff6600; 
+            cursor: pointer; 
+            font-family: 'Oswald', sans-serif;
+        }
+        .tab-btn:hover { background: #ff6600; color: #000; }
+        .management-links { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    </style>
 </head>
 <body>
+
     <nav class="navbar">
         <a href="index.html">Overview</a>
         <a href="live.html">Live</a>
@@ -16,19 +31,31 @@
     </nav>
 
     <div class="container">
-        <h1>🛠 Admin Dashboard</h1>
-
+        <h1>🛠 ADMIN CONTROL CENTER</h1>
+        
         <div class="card">
-            <h3>Team Registration</h3>
-            <iframe src="https://docs.google.com/forms/d/e/YOUR_ID/viewform?embedded=true" height="800"></iframe>
+            <h3>Registration Form</h3>
+            <p>Ensure your Google Form is set to "Public" so players can see it.</p>
+            
+            <div class="admin-box">
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/YOUR_FORM_ID_HERE/viewform?embedded=true" 
+                    width="100%" 
+                    height="700" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">Loading…</iframe>
+            </div>
         </div>
 
         <div class="card">
-            <h3>Quick Management Links</h3>
-            <p>Only organizers should use these:</p>
-            <a href="YOUR_SCORE7_ADMIN_URL" target="_blank" style="color:#00c853;">Edit Bracket/Schedule</a><br><br>
-            <a href="YOUR_KEEPTHESCORE_ADMIN_URL" target="_blank" style="color:#00c853;">Update Live Score</a>
+            <h3>Quick Actions</h3>
+            <div class="management-links">
+                <a href="https://www.score7.io/" target="_blank" class="btn-link" style="text-align:center;">Update Brackets</a>
+                <a href="https://keepthescore.com/" target="_blank" class="btn-link" style="text-align:center;">Edit Live Score</a>
+            </div>
         </div>
     </div>
+
 </body>
 </html>
