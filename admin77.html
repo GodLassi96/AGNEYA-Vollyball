@@ -1,88 +1,76 @@
-<div class="container animate">
-    <h1>🏐 MISSION CONTROL</h1>
-    
-    <div class="card">
-        <h3>ORGANIZING SQUAD</h3>
-        <div class="player-list">
-            <div class="player-row"><span>Tournament Director</span> <span>Sujal Jadhav</span></div>
-            <div class="player-row"><span>Lead Referee</span> <span>[Name / Phone]</span></div>
-            <div class="player-row"><span>Logistics Head</span> <span>[Name / Phone]</span></div>
-            <div class="player-row"><span>Medical Officer</span> <span>[Name / Phone]</span></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | AGNEYA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">Overview</a>
+        <a href="live.html">Live Score</a>
+        <a href="admin.html" class="active">Admin</a>
+    </nav>
+
+    <div class="container animate">
+        <h1>🛠 MISSION CONTROL</h1>
+        <p style="font-style: italic; color: #888; margin-bottom: 30px;">"The view from the top is a view I could never see on my own."</p>
+
+        <div class="card" style="border-left-color: #ff6600;">
+            <h3>⚡ MANAGEMENT CENTER</h3>
+            <p>Direct access to secret administrative edit portals:</p>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px;">
+                <a href="https://keepthescore.com/admin/YOUR_ID" target="_blank" class="btn-link">EDIT LIVE SCOREBOARD</a>
+                <a href="https://www.score7.io/admin" target="_blank" class="btn-link">MANAGE TOURNAMENT BRACKET</a>
+            </div>
         </div>
-    </div>
 
-    <div class="card" style="border-left: 10px solid #fff; background: #222;">
-        <h3 style="color: #fff;">PRE-MATCH CHECKLIST</h3>
-        <ul style="list-style: none; padding: 0; line-height: 2;">
-            <li><input type="checkbox"> Regulation Net & standards padded</li>
-            <li><input type="checkbox"> 2+ Competition Game Balls ready</li>
-            <li><input type="checkbox"> Scorebook & Libero Tracking sheets</li>
-            <li><input type="checkbox"> First Aid Kit (Ice, Bandages)</li>
-            <li><input type="checkbox"> PA System/Microphone tested</li>
-        </ul>
-    </div>
-
-    <div class="card">
-        <h3>MANAGEMENT PORTALS</h3>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <a href="https://keepthescore.com/admin/YOUR_ID" target="_blank" class="btn-link">EDIT SCOREBOARD</a>
-            <a href="https://www.score7.io/admin" target="_blank" class="btn-link">MANAGE BRACKETS</a>
-        </div>
-    </div>
-
-    <p style="text-align: center; color: #555; margin-top: 50px;">"The view from the top is a view I could never see on my own."</p>
-</div>
-
-      <div class="card" style="border-left-color: #ffffff;">
-            <h3 style="color: #ffffff;">🚩 SIGNAGE TRACKER</h3>
+        <div class="card" style="border-left-color: #ffffff;">
+            <h3 style="color: #ffffff;">📋 PRE-MATCH CHECKLIST</h3>
             <div class="player-list">
-                <div class="player-row"><span>Main Gate Banner</span> <input type="checkbox"></div>
-                <div class="player-row"><span>Drinking Water Station</span> <input type="checkbox"></div>
-                <div class="player-row"><span>First Aid / Medical Tent</span> <input type="checkbox"></div>
-                <div class="player-row"><span>QR Code Scoreboards</span> <input type="checkbox"></div>
+                <div class="player-row"><span>Net Height & Tension</span> <input type="checkbox"></div>
+                <div class="player-row"><span>2+ Game Balls Ready</span> <input type="checkbox"></div>
+                <div class="player-row"><span>Medical Kit & Ice Packs</span> <input type="checkbox"></div>
+                <div class="player-row"><span>Referee Whistles</span> <input type="checkbox"></div>
+                <div class="player-row"><span>Drinking Water for Teams</span> <input type="checkbox"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>🚩 SIGNAGE TRACKER</h3>
+            <div class="player-list">
+                <div class="player-row"><span>Main Entrance Banner</span> <input type="checkbox"></div>
+                <div class="player-row"><span>Live Link QR Codes</span> <input type="checkbox"></div>
                 <div class="player-row"><span>Team Bench Labels</span> <input type="checkbox"></div>
             </div>
         </div>
 
         <div class="card" style="background: #2a1100; border: 2px solid #ff6600;">
-            <h3>⚠️ WEATHER PROTOCOL</h3>
-            <p><b>Current Status:</b> <span style="color: #00c853;">OPERATIONAL / ALL CLEAR</span></p>
-            <div style="font-size: 0.9rem; border-top: 1px solid #555; padding-top: 10px; margin-top: 10px;">
-                <p>• Pause matches immediately if lightning is detected.</p>
-                <p>• Rain delay of 30+ minutes triggers schedule compression.</p>
-                <p>• Notify all Team Captains via WhatsApp within 5 minutes of delay.</p>
-            </div>
+            <h3>⚠️ WEATHER DELAY PLAN</h3>
+            <p><b>Status:</b> <span style="color: #00c853;">ALL CLEAR / MATCHES ON</span></p>
+            <p style="font-size: 0.9rem; border-top: 1px solid #555; padding-top: 10px; margin-top: 10px;">
+                Protocol: Shift to 15-point sets if rain exceeds 30 mins. Notify captains via WhatsApp.
+            </p>
         </div>
 
         <div class="card">
-            <h3>📸 MEDIA & ASSETS</h3>
-            <p>Manage tournament photos and social media templates here.</p>
-            <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 15px;">
-                <a href="YOUR_DRIVE_OR_PHOTOS_LINK" target="_blank" class="btn-link">UPLOAD PHOTOS</a>
-                <a href="YOUR_CANVA_OR_DESIGN_LINK" target="_blank" class="btn-link">POSTER TEMPLATES</a>
+            <h3>📸 MEDIA & FEEDBACK</h3>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="YOUR_PHOTOS_LINK" target="_blank" class="btn-link">UPLOAD PHOTOS</a>
+                <a href="YOUR_FEEDBACK_LINK" target="_blank" class="btn-link">VIEW FEEDBACK</a>
             </div>
         </div>
 
         <div class="card" style="border-left-color: #888;">
-            <h3>DASHBOARD LINKS</h3>
-            <p>Access secret edit links for tournament tools:</p>
-            <div style="display: flex; gap: 20px; margin-top: 15px;">
-                <a href="https://keepthescore.com/admin/YOUR_ID" target="_blank" style="color: #ff6600; text-decoration: none; font-weight: bold;">➡️ EDIT LIVE SCORE</a>
-                <a href="https://www.score7.io/admin" target="_blank" style="color: #ff6600; text-decoration: none; font-weight: bold;">➡️ MANAGE BRACKETS</a>
-            </div>
+            <h3>COMMITTEE INFO</h3>
+            <p><b>Lead:</b> Sujal Jadhav (Treasurer, Batch Agneya)</p>
+            <p><b>Location:</b> GMC Miraj Ground</p>
         </div>
-
-        <div class="card">
-            <h3>📝 TOURNAMENT FEEDBACK</h3>
-            <p>Collect data from batchmates to improve future editions.</p>
-            <a href="YOUR_GOOGLE_FORM_LINK" target="_blank" class="btn-link" style="width: 100%; text-align: center; display: block; box-sizing: border-box;">OPEN FEEDBACK FORM</a>
-        </div>
-
     </div>
 
-    <p style="text-align: center; color: #444; margin-bottom: 50px; font-size: 0.9rem;">
-        AGNEYA 2026 Admin Dashboard | GMC Miraj
-    </p>
+    <p style="text-align: center; color: #444; margin-bottom: 50px; font-size: 0.8rem;">AGNEYA 2026 OFFICIAL ADMIN PORTAL</p>
 
 </body>
 </html>
