@@ -1,10 +1,9 @@
-/* Haikyu!! Pro Theme - Optimized for Mobile */
+/* Haikyu!! Pro Theme - Glow & Mobile Fix */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;900&display=swap');
 
 :root {
     --karasuno-orange: #ff6600;
     --pitch-black: #0b0b0b;
-    --card-bg: #1a1a1a;
 }
 
 body { 
@@ -12,69 +11,45 @@ body {
     background-color: var(--pitch-black); 
     color: white; 
     margin: 0; 
-    padding-top: 70px; /* Space for Navbar */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    padding-top: 70px; 
 }
 
-/* Navbar - Stays fixed but slim on mobile */
-.navbar { 
-    background: rgba(20, 20, 20, 0.98);
-    position: fixed; top: 0; width: 100%; 
-    display: flex; justify-content: center; 
-    padding: 12px 0; z-index: 1000; 
-    border-bottom: 2px solid var(--karasuno-orange);
-}
-
-.navbar a { 
-    font-family: 'Oswald', sans-serif;
-    color: white; text-decoration: none; 
-    margin: 0 10px; font-size: 14px; 
-    text-transform: uppercase;
-}
-
-.navbar a.active { color: var(--karasuno-orange); border-bottom: 2px solid var(--karasuno-orange); }
-
-/* Main Container - Scalable height */
-.container { 
-    width: 90%; 
-    max-width: 600px; 
-    margin: 20px auto; 
-    flex-grow: 1;
-}
-
-.card { 
-    background: var(--card-bg); 
-    padding: 20px; 
-    border-left: 6px solid var(--karasuno-orange);
-    margin-bottom: 20px;
-    box-shadow: 5px 5px 0px #000;
-}
-
-/* Giant Button Fix */
+/* --- THE GIANT BUTTON GLOW --- */
 .giant-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
     background: var(--karasuno-orange);
     color: black;
     font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
-    padding: 30px 15px; /* Increased height for better tap area */
+    font-size: 1.8rem;
+    padding: 25px;
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
-    width: 100%;
-    box-sizing: border-box;
+    border: none;
+    transition: 0.3s ease-in-out;
+    /* This creates the initial pulse graphic */
+    animation: orange-glow 2s infinite;
+    cursor: pointer;
 }
 
-/* Scoreboard Iframe - Now Responsive */
+.giant-btn:hover {
+    background: #ffffff;
+    transform: scale(1.02);
+    box-shadow: 0 0 30px var(--karasuno-orange);
+}
+
+@keyframes orange-glow {
+    0% { box-shadow: 0 0 5px rgba(255, 102, 0, 0.4); }
+    50% { box-shadow: 0 0 25px rgba(255, 102, 0, 0.9); }
+    100% { box-shadow: 0 0 5px rgba(255, 102, 0, 0.4); }
+}
+
+/* --- LIVE SCORE VOID FIX --- */
 .iframe-container {
-    position: relative;
     width: 100%;
-    height: 75vh; /* Takes 75% of the screen height on any device */
-    background: #000;
+    height: 300px; /* Fixed height to kill the black void */
+    background: #1a1a1a;
+    overflow: hidden;
 }
 
 iframe {
@@ -83,12 +58,20 @@ iframe {
     border: none;
 }
 
-h1 { font-family: 'Oswald', sans-serif; font-size: 2.5rem; color: var(--karasuno-orange); text-align: center; margin: 10px 0; }
-
-/* Mobile Specific Adjustments */
-@media (max-width: 480px) {
-    h1 { font-size: 2.2rem; }
-    .giant-btn { font-size: 1.3rem; padding: 40px 10px; }
-    .container { width: 95%; margin: 10px auto; }
+/* Utility Classes */
+.card { 
+    background: #1a1a1a; 
+    padding: 20px; 
+    border-left: 6px solid var(--karasuno-orange);
+    margin-bottom: 20px;
 }
 
+.container { width: 90%; max-width: 600px; margin: auto; }
+
+.navbar { 
+    background: #141414; position: fixed; top: 0; width: 100%; 
+    display: flex; justify-content: center; padding: 15px 0; z-index: 1000; 
+    border-bottom: 2px solid var(--karasuno-orange);
+}
+
+.navbar a { color: white; text-decoration: none; margin: 0 15px; font-family: 'Oswald'; }
