@@ -1,54 +1,63 @@
-/* Haikyu!! Pro Theme - Glow & Mobile Fix */
+/* AGNEYA: Haikyu!! Ultimate Mobile Theme */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;900&display=swap');
 
 :root {
     --karasuno-orange: #ff6600;
     --pitch-black: #0b0b0b;
+    --grid-color: rgba(255, 102, 0, 0.05); /* Subtle Court Texture */
 }
 
 body { 
     font-family: 'Roboto', sans-serif; 
     background-color: var(--pitch-black); 
+    /* Court Floor Texture Graphic */
+    background-image: 
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 40px 40px;
     color: white; 
     margin: 0; 
     padding-top: 70px; 
 }
 
-/* --- THE GIANT BUTTON GLOW --- */
+/* --- THE GIANT BUTTON WITH GLOW --- */
 .giant-btn {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: var(--karasuno-orange);
     color: black;
     font-family: 'Oswald', sans-serif;
-    font-size: 1.8rem;
-    padding: 25px;
+    font-size: 1.6rem;
+    padding: 35px 20px;
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
-    border: none;
-    transition: 0.3s ease-in-out;
-    /* This creates the initial pulse graphic */
-    animation: orange-glow 2s infinite;
+    border: 3px solid #000;
     cursor: pointer;
+    /* Pulsing Glow Animation */
+    animation: anime-pulse 2s infinite;
+    transition: 0.3s;
 }
 
 .giant-btn:hover {
-    background: #ffffff;
-    transform: scale(1.02);
-    box-shadow: 0 0 30px var(--karasuno-orange);
+    background: #fff;
+    transform: scale(1.03);
+    box-shadow: 0 0 40px var(--karasuno-orange);
 }
 
-@keyframes orange-glow {
-    0% { box-shadow: 0 0 5px rgba(255, 102, 0, 0.4); }
-    50% { box-shadow: 0 0 25px rgba(255, 102, 0, 0.9); }
-    100% { box-shadow: 0 0 5px rgba(255, 102, 0, 0.4); }
+@keyframes anime-pulse {
+    0% { box-shadow: 0 0 10px rgba(255, 102, 0, 0.5); }
+    50% { box-shadow: 0 0 30px rgba(255, 102, 0, 0.8); }
+    100% { box-shadow: 0 0 10px rgba(255, 102, 0, 0.5); }
 }
 
-/* --- LIVE SCORE VOID FIX --- */
+/* --- LIVE SCORE VOID REMOVAL --- */
 .iframe-container {
     width: 100%;
-    height: 300px; /* Fixed height to kill the black void */
+    height: 350px; /* Locked height for mobile proportion */
     background: #1a1a1a;
+    border-radius: 4px;
     overflow: hidden;
 }
 
@@ -58,20 +67,22 @@ iframe {
     border: none;
 }
 
-/* Utility Classes */
-.card { 
-    background: #1a1a1a; 
-    padding: 20px; 
-    border-left: 6px solid var(--karasuno-orange);
-    margin-bottom: 20px;
-}
+/* Common Layout */
+.container { width: 92%; max-width: 500px; margin: auto; }
 
-.container { width: 90%; max-width: 600px; margin: auto; }
+.card { 
+    background: rgba(26, 26, 26, 0.9); 
+    padding: 20px; 
+    border-left: 8px solid var(--karasuno-orange);
+    margin-bottom: 25px;
+    box-shadow: 10px 10px 0px #000;
+}
 
 .navbar { 
-    background: #141414; position: fixed; top: 0; width: 100%; 
+    background: #111; position: fixed; top: 0; width: 100%; 
     display: flex; justify-content: center; padding: 15px 0; z-index: 1000; 
-    border-bottom: 2px solid var(--karasuno-orange);
+    border-bottom: 3px solid var(--karasuno-orange);
 }
 
-.navbar a { color: white; text-decoration: none; margin: 0 15px; font-family: 'Oswald'; }
+.navbar a { color: white; text-decoration: none; margin: 0 12px; font-family: 'Oswald'; font-size: 14px; text-transform: uppercase; }
+.navbar a.active { color: var(--karasuno-orange); }
