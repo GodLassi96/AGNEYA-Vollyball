@@ -1,26 +1,58 @@
-/* AGNEYA: Haikyu!! Ultimate Mobile Theme */
+/* Haikyu!! Pro Theme - Optimized for Mobile */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;900&display=swap');
 
 :root {
     --karasuno-orange: #ff6600;
     --pitch-black: #0b0b0b;
-    --grid-color: rgba(255, 102, 0, 0.05); /* Subtle Court Texture */
+    --card-bg: #1a1a1a;
 }
 
 body { 
     font-family: 'Roboto', sans-serif; 
     background-color: var(--pitch-black); 
-    /* Court Floor Texture Graphic */
-    background-image: 
-        linear-gradient(var(--grid-color) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-    background-size: 40px 40px;
     color: white; 
     margin: 0; 
-    padding-top: 70px; 
+    padding-top: 70px; /* Space for Navbar */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* --- THE GIANT BUTTON WITH GLOW --- */
+/* Navbar - Stays fixed but slim on mobile */
+.navbar { 
+    background: rgba(20, 20, 20, 0.98);
+    position: fixed; top: 0; width: 100%; 
+    display: flex; justify-content: center; 
+    padding: 12px 0; z-index: 1000; 
+    border-bottom: 2px solid var(--karasuno-orange);
+}
+
+.navbar a { 
+    font-family: 'Oswald', sans-serif;
+    color: white; text-decoration: none; 
+    margin: 0 10px; font-size: 14px; 
+    text-transform: uppercase;
+}
+
+.navbar a.active { color: var(--karasuno-orange); border-bottom: 2px solid var(--karasuno-orange); }
+
+/* Main Container - Scalable height */
+.container { 
+    width: 90%; 
+    max-width: 600px; 
+    margin: 20px auto; 
+    flex-grow: 1;
+}
+
+.card { 
+    background: var(--card-bg); 
+    padding: 20px; 
+    border-left: 6px solid var(--karasuno-orange);
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 0px #000;
+}
+
+/* Giant Button Fix */
 .giant-btn {
     display: flex;
     align-items: center;
@@ -28,37 +60,21 @@ body {
     background: var(--karasuno-orange);
     color: black;
     font-family: 'Oswald', sans-serif;
-    font-size: 1.6rem;
-    padding: 35px 20px;
+    font-size: 1.5rem;
+    padding: 30px 15px; /* Increased height for better tap area */
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
-    border: 3px solid #000;
-    cursor: pointer;
-    /* Pulsing Glow Animation */
-    animation: anime-pulse 2s infinite;
-    transition: 0.3s;
-}
-
-.giant-btn:hover {
-    background: #fff;
-    transform: scale(1.03);
-    box-shadow: 0 0 40px var(--karasuno-orange);
-}
-
-@keyframes anime-pulse {
-    0% { box-shadow: 0 0 10px rgba(255, 102, 0, 0.5); }
-    50% { box-shadow: 0 0 30px rgba(255, 102, 0, 0.8); }
-    100% { box-shadow: 0 0 10px rgba(255, 102, 0, 0.5); }
-}
-
-/* --- LIVE SCORE VOID REMOVAL --- */
-.iframe-container {
     width: 100%;
-    height: 350px; /* Locked height for mobile proportion */
-    background: #1a1a1a;
-    border-radius: 4px;
-    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Scoreboard Iframe - Now Responsive */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    height: 75vh; /* Takes 75% of the screen height on any device */
+    background: #000;
 }
 
 iframe {
@@ -67,22 +83,11 @@ iframe {
     border: none;
 }
 
-/* Common Layout */
-.container { width: 92%; max-width: 500px; margin: auto; }
+h1 { font-family: 'Oswald', sans-serif; font-size: 2.5rem; color: var(--karasuno-orange); text-align: center; margin: 10px 0; }
 
-.card { 
-    background: rgba(26, 26, 26, 0.9); 
-    padding: 20px; 
-    border-left: 8px solid var(--karasuno-orange);
-    margin-bottom: 25px;
-    box-shadow: 10px 10px 0px #000;
+/* Mobile Specific Adjustments */
+@media (max-width: 480px) {
+    h1 { font-size: 2.2rem; }
+    .giant-btn { font-size: 1.3rem; padding: 40px 10px; }
+    .container { width: 95%; margin: 10px auto; }
 }
-
-.navbar { 
-    background: #111; position: fixed; top: 0; width: 100%; 
-    display: flex; justify-content: center; padding: 15px 0; z-index: 1000; 
-    border-bottom: 3px solid var(--karasuno-orange);
-}
-
-.navbar a { color: white; text-decoration: none; margin: 0 12px; font-family: 'Oswald'; font-size: 14px; text-transform: uppercase; }
-.navbar a.active { color: var(--karasuno-orange); }
